@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Compare Mania</string>
+    <string name="textLess"><![CDATA[<]]></string>
+    <string name="textEqual">=</string>
+    <string name="textGreater"><![CDATA[>]]></string>
+    <string name="compare_mania"><![CDATA[<Compare Mania>]]></string>
 </resources>
