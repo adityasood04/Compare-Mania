@@ -4,4 +4,9 @@
     <string name="textEqual">=</string>
     <string name="textGreater"><![CDATA[>]]></string>
     <string name="compare_mania"><![CDATA[<Compare Mania>]]></string>
+    <string name="score">Score</string>
+    <string name="play_again">Play Again</string>
+    <string name="how_many_rounds_you_want_to_play">How many rounds you want to play?</string>
+    <string name="eg_10">eg : 10</string>
+    <string name="start">Start</string>
 </resources>

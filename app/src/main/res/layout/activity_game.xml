@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins"
-        android:text="Score"
+        android:text="@string/score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -141,7 +141,7 @@
             android:id="@+id/tvResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score"
+            android:text="@string/score"
             android:textSize="24sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -151,7 +151,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/bg_green"
             android:paddingHorizontal="16dp"
-            android:text="Play Again"
+            android:text="@string/play_again"
             android:textColor="@color/white" />
 
     </LinearLayout>

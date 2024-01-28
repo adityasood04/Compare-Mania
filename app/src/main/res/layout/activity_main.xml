@@ -10,8 +10,6 @@
     android:background="@color/colorBg"
     tools:context=".MainActivity">
 
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -35,14 +33,14 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="How many rounds you want to play?"
+        android:text="@string/how_many_rounds_you_want_to_play"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etRounds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="eg : 10"
+        android:hint="@string/eg_10"
         android:textAlignment="center"
         android:padding="16dp"
         android:maxLength="7"
@@ -54,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:text="Start"
+        android:text="@string/start"
         android:textColor="@color/white"
         android:background="@drawable/bg_green"/>
 

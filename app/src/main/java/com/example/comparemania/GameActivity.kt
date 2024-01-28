@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.comparemania.databinding.ActivityGameBinding
 import java.util.Random
 
