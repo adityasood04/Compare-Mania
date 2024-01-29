@@ -16,19 +16,14 @@ class GameActivity : AppCompatActivity() {
     private var numberTwo: Int = 0
     private var score: Int = 0
     private var rounds: Int = 0
-    private var handler: Handler? = null
-    private var runnable: Runnable? = null
     private var countDownTimer: CountDownTimer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         rounds = Integer.parseInt(intent.getStringExtra("ROUNDS")!!)
-        handler = Handler();
-        runnable = Runnable {
-            generateNumbers()
-        }
         generateNumbers()
 
     }
@@ -53,7 +48,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun setTimer() {
         countDownTimer?.cancel()
-        countDownTimer = object : CountDownTimer(10000, 1000) {
+        countDownTimer = object : CountDownTimer(10000, 10) {
             override fun onTick(p0: Long) {
                 binding.pb.progress = (p0 / 100).toInt()
             }
@@ -66,55 +61,44 @@ class GameActivity : AppCompatActivity() {
     private fun resetTimer() {
         binding.pb.progress = 10
         countDownTimer?.cancel()
-        setTimer()
+        generateNumbers()
     }
 
     private fun setListeners() {
-        handler?.removeCallbacks(runnable!!)
         if (numberOne == numberTwo) {
             binding.btnLess.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
             binding.btnEqual.setOnClickListener {
                 score++
                 resetTimer()
-                generateNumbers()
             }
             binding.btnGreater.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
         } else if (numberOne < numberTwo) {
             binding.btnLess.setOnClickListener {
                 score++
                 resetTimer()
-                generateNumbers()
             }
             binding.btnEqual.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
             binding.btnGreater.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
         } else {
             binding.btnLess.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
             binding.btnEqual.setOnClickListener {
                 resetTimer()
-                generateNumbers()
             }
             binding.btnGreater.setOnClickListener {
                 score++
                 resetTimer()
-                generateNumbers()
             }
         }
-        handler?.postDelayed(runnable!!, 10000)
 
     }
 
@@ -132,7 +116,6 @@ class GameActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        handler?.removeCallbacks(runnable!!)
         countDownTimer?.cancel()
     }
 }
